@@ -1,0 +1,76 @@
+/* Ensure the App takes up the full viewport */
+.App {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure the particles cover the entire page in the background */
+.particles-background {
+  position: fixed; /* Fixed position so it stays in the background */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  z-index: -1; /* Push the particles behind other elements */
+  pointer-events: none; /* Prevent any interaction with particles */
+}
+
+/* Ensure the content is stacked above the particles */
+.content-container {
+  z-index: 1; /* Make sure content is above the particles */
+  position: relative;
+  width: 100%;
+}
+
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.particles-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -50; /* Push it to the background */
+}
+
+.content-container {
+  position: relative;
+  z-index: 1; /* Ensure content is above particles */
+}
